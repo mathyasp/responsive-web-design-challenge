@@ -6,13 +6,83 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<style>
-		/* Your styles here! */
+		/* Your shared styles here! */
+		body, html {
+			height: 100%;
+		}
+
+		body {
+			display: flex;
+			justify-content: center;
+			margin: 1rem;
+		}
+		
+		article {
+			background-color: aquamarine;
+			padding: 1rem;
+		}
+		
+		.image {
+			width: 100%;
+			height: auto;
+		}
+
+		.features-list {
+			display: flex;
+			justify-content: flex-end;
+			gap: 10px;
+		}
+
+		.features-list div {
+			background: beige;
+			padding: 3px 6px;
+			border-radius: 5px;
+		}
+
+		/* Desktop styles */
+		@media (min-width: 768px) {
+			.main {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr;
+				grid-gap: 2rem;
+			}
+
+			article {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.image {
+				width: 200px;
+				height: auto;
+				margin-right: 1rem;
+			}
+
+			.features {
+				flex-grow: 1;
+			}
+		}
+
+		/* Mobile styles */
+		@media (max-width: 767px) {
+			article {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start; 
+				margin: 0rem 1rem 2rem;
+			}
+
+			.features {
+				width: 100%; 
+			}
+		}
 		
 	</style>
 </head>
 <body>
 
-	<!--  -->
 	<section class="main">
 		<article>
 			<div>
@@ -30,7 +100,6 @@
 			</div>
 		</article>
 
-		<!--  -->
 		<article>
 			<div>
 				<img class="image" src="images/50-california-st.jpg" />
@@ -48,7 +117,6 @@
 			</div>
 		</article>
 
-		<!--  -->
 		<article>
 			<div>
 				<img class="image" src="images/empire-park.jpg" />
